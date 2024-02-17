@@ -1,0 +1,258 @@
+@font-face {
+    font-family: "digit7";
+    src: url(digital-7/digital-7\ \(italic\).ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --nav-color:#3191dd;
+    --back-color:#f0f0f0;
+    --cont-color: white;
+    --text-color: #383839;
+    --digit-color:#383839;
+    --popup-back-color:#3e3e3e;
+}
+
+.navbar a{
+    font-size: 20px;
+}
+
+.dark-theme{
+    --nav-color:rgb(127, 1, 43);
+    --back-color:black;
+    --cont-color: black;
+    --text-color: white;
+    --digit-color:rgb(127, 1, 43);
+    --popup-back-color:#3e3e3e;
+}
+
+.navbar{
+    background-color: var(--nav-color);
+    color: white;
+    height:10vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right li{
+    display: inline-block;
+    margin: 20px;
+}
+
+.icon{
+    font-size: 28px;
+}
+
+body{
+    background:var(--back-color);
+}
+
+#container{
+    background:var(--back-color);
+    color: var(--text-color);
+    width: 93vw;
+    position: relative;
+    top: 14vh;
+    left: 3vw;
+    justify-content: center;
+    display: grid;
+    gap: 3vh;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.cont{
+    background-color: var(--cont-color);
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.one{
+    grid-area: 1/1/2/3;
+    height: 65vh;
+    margin: 1vh 0 2vh 0; 
+}
+
+.time p{
+    border-radius: 50px;
+    font-size: 180px;
+    text-align: center;
+    color: var(--digit-color);
+}
+
+.buttons{
+    align-self: center;
+    margin: 1vh ;
+    position: relative;
+    top: 50px;
+}
+
+.button{
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 2vh 2vh;
+    width: 15vw;
+    font-size: 24px;
+    /* font-weight: bold; */
+    text-align: center;
+    text-transform: uppercase;
+}
+#edit{
+    background-color: #ffe8d0;
+}
+#edit:hover{
+background-color: rgb(214, 168, 108);
+}
+#reset{
+    background-color: #ffe8d0;
+}
+#reset:hover{
+    background-color: #004278;
+}
+
+#stop{
+    display: none;
+    background-color: #ffe8d0;
+}
+#stop:hover{
+    background-color: rgb(144, 0, 0);
+}
+
+#start{
+    display: inline-block;
+    background-color: #ffe8d0;
+}
+#start:hover{
+    background-color: rgb(62, 121, 55);
+    cursor: pointer;
+}
+
+.two,.three {
+    padding: 1vw;
+}
+
+hr{
+    width: 100%;
+    height: 1px;
+    align-self: center;
+}
+
+.heading{
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(127, 1, 43);
+
+}
+a:link,a:visited{
+    color: #02233e;
+    background-color: transparent;
+}
+
+td{
+    color: #8a663f;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    letter-spacing: 2px;
+    /* line-height: 35px; */
+    text-decoration: none;
+    font-weight: 500;
+    /* padding: 5px; */
+    cursor: pointer;
+}
+
+td a:hover{
+    color: rgb(92, 190, 247);
+}
+tr{
+    text-align: center;
+}
+.popup{
+    background-color: black;
+    display: none;
+    width: 40vw;
+    position: fixed;
+    top: 15vh;
+    left: 30vw;
+    z-index: 100;
+    border-radius: 10px;
+}
+
+i{
+    cursor: pointer;
+}
+
+.popup .upper{
+    padding: 2vh;
+    border-radius: 10px 10px 0 0;
+    background-color:var(--nav-color);
+    color: var(--text-color);
+}
+.popup .upper p{
+    text-align: left;
+    font-size: 45px;
+}
+
+.popup .controls{
+    height: 50vh;
+    background-color:var(--popup-back-color);
+    color: white;
+    padding: 2vh 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.popup .controls span{
+    text-align: left;
+    font-size: 35px;
+
+}
+
+.popup .lower{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vh;
+    border-radius: 0 0 10px 10px ;
+    background-color: var(--popup-back-color);
+}
+
+.hour-box,.minute-box,.second-box{
+    display: flex;
+    padding: 0 2vh 0 0;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+input{
+    width: 50px;
+    font-size: 20px;
+}
+
+.blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+}

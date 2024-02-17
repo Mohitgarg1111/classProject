@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTDOWN TIMER</title>
+    <link rel="icon" type="image/x-icon" href="images/icon.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.cdnfonts.com/css/led-digital-7" rel='stylesheet' type='text/css'>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar" id="navbar">
+            <div class="left"><img src="images/clock3.webp" height="70vh" alt="logo"></div>
+            <div class="right"> 
+                <ul>
+                    <li><i class="icon bi bi-brightness-high-fill" id="darkmode">Theme</i></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="container" id="container">
+        <div class="one cont" id="one cont">
+            <div class="time">
+                <p>
+                    <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+                </p>
+            </div>
+            <div class="buttons">
+                <button class="button" id="edit">Edit Timer</button>
+                <button class="button" id="reset">Reset</button>
+                <button class="button" id="start">Start</button>
+                <button class="button" id="stop">Stop</button>
+            </div>
+        </div>
+        <div class="two cont" id="two cont">
+            <table align="center">
+                <span class="heading">Set the timer for the specified time</span>
+                <hr color="gray"><br><br>
+                <tr>
+                    <td><a onclick="setcustom(60);">1 Minute Timer</a></td>
+                    <td><a onclick="setcustom(10);">10 Second Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*3);">3 Minute Timer</a></td>
+                    <td><a onclick="setcustom(20);">20 Second Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*5);">5 Minute Timer</a></td>
+                    <td><a onclick="setcustom(30);">30 Second Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*10);">10 Minute Timer</a></td>
+                    <td><a onclick="setcustom(45);">45 Second Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*15);">15 Minute Timer</a></td>
+                    <td><a onclick="setcustom(60);">60 Second Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*20);">20 Minute Timer</a></td>
+                    <td><a onclick="setcustom(90);">90 Second Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*30);">30 Minute Timer</a></td>
+                    <td><a onclick="setcustom(60*60*1);">1 Hour Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*40);">40 Minute Timer</a></td>
+                    <td><a onclick="setcustom(60*60*2);">2 Hour Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*50);">50 Minute Timer</a></td>
+                    <td><a onclick="setcustom(60*60*4);">4 Hour Timer</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*60);">60 Minute Timer</a></td>
+                    <td><a onclick="setcustom(60*60*8);">8 Hour Timer</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="three cont" id="three cont">
+            <table align="center" width="50%">
+                <span class="heading">Recently used</span>
+                <hr color="gray"><br><br>
+                <tr>
+                    <td><a onclick="setcustom(0);">Timer</a></td>
+                    <td>00:00:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*1);">1 Minute </a></td>
+                    <td>00:01:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*3);">2 Minute </a></td>
+                    <td>00:02:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*3);">3 Minute </a></td>
+                    <td>00:03:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*5);">5 Minute </a></td>
+                    <td>00:05:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*10);">10 Minute </a></td>
+                    <td>00:10:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*15);">15 Minute </a></td>
+                    <td>00:15:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*20);">20 Minute </a></td>
+                    <td>00:20:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*30);">30 Minute </a></td>
+                    <td>00:30:00</a></td>
+                </tr>
+                <tr>
+                    <td><a onclick="setcustom(60*40);">40 Minute </a></td>
+                    <td>00:40:00</a></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <div class="popup">
+        <div class="upper" id="upper">
+            <p>Edit Timer</p>
+        </div>
+        <hr>
+        <div class="controls" id="controls">
+
+            <div class="hour-box">
+                <span id="hour-label" class="label">Hours</span>
+                <input type="number" max="99" min="0" value="0" class="set-box" id="set-hour">
+            </div>
+            <div class="minute-box">
+                <span id="min-label" class="label">Minutes</span>
+                <input type="number" max="59" min="0" value="0" class="set-box" id="set-min">
+            </div>
+            <div class="second-box">
+                <span id="sec-label" class="label">Seconds</span>
+                <input type="number" max="59" min="0" value="0" class="set-box" id="set-sec">
+            </div>
+        </div>
+        <hr>
+        <div class="lower">
+            <Left><button id="cancle" class="button" style="background-color: gray;">Cancel</button></Left>
+            <Right><button id="settimer" class="button" style="background-color: #4eae71;">Set Timer</button></Right>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

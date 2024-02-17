@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  .countdown-timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #c31432, #240b36)
+  }
+  
+  ul li {
+    display: inline-block;
+    padding: 0 15px;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  ul li span {
+    display: block;
+    font-size: 60px;
+    padding: 0px 10px;
+    margin-top: 30px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+  }
+  
+  ul li span:nth-child(2) {
+    font-size: 20px;
+  }
+  
+
+
+  .greet {
+    color: rgb(0, 0, 0);
+    font-size: 60px;
+    text-align: center;
+    /* font-family: sans-serif; */
+    margin-top: 80px;
+    letter-spacing: 2px;
+  }
+  
+  .coming-year {
+    font-size: 100px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    margin-top: 30px;
+  }

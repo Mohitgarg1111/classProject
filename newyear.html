@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/ct.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>COUNTDOWN TIMER</title>
+    <link rel="icon" type="image/x-icon" href="images/icon.jpeg">
+    <script src="jquery3.6.js"></script>
+</head>
+
+<body>
+
+    <header></header>
+    <section>
+        <div class="wrapper">
+            <hgroup>
+                <h1 style="text-align: center; letter-spacing: 2px; text-transform: uppercase; font-size: 80px;">
+                    Countdown</h1>
+                <p class="meta" style="text-align: center; letter-spacing: 2px; font-size: 40px;">FINALLY! Now that's
+                    the time left for our final goal completion</p>
+            </hgroup>
+
+            <div id="countdown">
+                <div class="cd-box">
+                    <p class="numbers days">00</p><br>
+                    <p class="strings timeRefDays">Days</p>
+                </div>
+                <div class="cd-box">
+                    <p class="numbers hours">00</p><br>
+                    <p class="strings timeRefHours">Hours</p>
+                </div>
+                <div class="cd-box">
+                    <p class="numbers minutes">00</p><br>
+                    <p class="strings timeRefMinutes">Minutes</p>
+                </div>
+                <div class="cd-box">
+                    <p class="numbers seconds">00</p><br>
+                    <p class="strings timeRefSeconds">Seconds</p>
+                </div>
+            </div>
+            <!-- end div#countdown -->
+        </div>
+        <!-- end div.wrapper -->
+    </section>
+
+
+</body>
+
+</html>
+
+<script>$(document).ready(function () {
+        //
+        (function (e) {
+            e.fn.countdown = function (t, n) {
+                function i() {
+                    eventDate = Date.parse(r.date) / 1e3;
+                    currentDate = Math.floor(e.now() / 1e3);
+                    //
+                    if (eventDate <= currentDate) {
+                        n.call(this);
+                        clearInterval(interval)
+                    }
+                    //
+                    seconds = eventDate - currentDate;
+                    days = Math.floor(seconds / 86400);
+                    seconds -= days * 60 * 60 * 24;
+                    hours = Math.floor(seconds / 3600);
+                    seconds -= hours * 60 * 60;
+                    minutes = Math.floor(seconds / 60);
+                    seconds -= minutes * 60;
+                    //
+                    days == 1 ? thisEl.find(".timeRefDays").text("Days") : thisEl.find(".timeRefDays").text("Days");
+                    hours == 1 ? thisEl.find(".timeRefHours").text("Hours") : thisEl.find(".timeRefHours").text("Hours");
+                    minutes == 1 ? thisEl.find(".timeRefMinutes").text("Minutes") : thisEl.find(".timeRefMinutes").text("Minutes");
+                    seconds == 1 ? thisEl.find(".timeRefSeconds").text("Seconds") : thisEl.find(".timeRefSeconds").text("Seconds");
+                    //
+                    if (r["format"] == "on") {
+                        days = String(days).length >= 2 ? days : "0" + days;
+                        hours = String(hours).length >= 2 ? hours : "0" + hours;
+                        minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
+                        seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
+                    }
+                    //
+                    if (!isNaN(eventDate)) {
+                        thisEl.find(".days").text(days);
+                        thisEl.find(".hours").text(hours);
+                        thisEl.find(".minutes").text(minutes);
+                        thisEl.find(".seconds").text(seconds)
+                    }
+                    else {
+                        errorMessage = "Invalid date. Example: 27 March 2015 17:00:00";
+                        alert(errorMessage);
+                        console.log(errorMessage);
+                        clearInterval(interval)
+                    }
+                }
+                //
+                var thisEl = e(this);
+                var r = {
+                    date: null,
+                    format: null
+                };
+                //
+                t && e.extend(r, t);
+                i();
+                interval = setInterval(i, 1e3)
+            }
+        })(jQuery);
+        //
+        $(document).ready(function () {
+            function e() {
+                var e = new Date;
+                e.setDate(e.getDate() + 60);
+                dd = e.getDate();
+                mm = e.getMonth() + 1;
+                y = e.getFullYear();
+                futureFormattedDate = mm + "/" + dd + "/" + y;
+                return futureFormattedDate
+            }
+            //
+            $("#countdown").countdown({
+                date: "31 december 2023 23:59:59", // change date/time here - do not change the format!
+                format: "on"
+            });
+        });
+    });</script>
